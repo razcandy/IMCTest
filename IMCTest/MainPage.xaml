@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:fields="clr-namespace:IMCTest.Fields"
+             x:Class="IMCTest.MainPage"
+             BackgroundColor="#111111" Padding="16">
+    
+    <ScrollView Orientation="Vertical">
+        
+        <Grid x:Name="MainGrid" ColumnSpacing="8" RowSpacing="8">
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="68"/>
+                <RowDefinition Height="68"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="68"/>
+                <RowDefinition Height="68"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="68"/>
+                <RowDefinition Height="35"/> <!--Buttons-->
+                <RowDefinition Height="Auto"/> <!--Message Label-->
+            </Grid.RowDefinitions>
+
+            <Label
+                x:Name="FromLabel" Text="From"
+                Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2"
+                />
+
+            <fields:FieldSpinner
+                x:Name="FromCountrySpinner"
+                Title="Country"
+                Grid.Column="0" Grid.Row="1"
+                />
+
+            <fields:FieldSpinner
+                x:Name="FromStateSpinner"
+                Title="State"
+                Grid.Column="1" Grid.Row="1"
+                />
+
+            <fields:FieldEntry
+                x:Name="FromCity"
+                Title="City"
+                Grid.Column="0" Grid.Row="2"
+                />
+
+            <fields:FieldEntry
+                x:Name="FromZipEntry"
+                Keyboard="Numeric"
+                Title="Zip"
+                Grid.Column="1" Grid.Row="2"
+                />
+
+            <Label
+                x:Name="ToLabel" Text="To"
+                Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2"
+                />
+
+            <fields:FieldSpinner
+                x:Name="ToCountrySpinner"
+                Title="Country"
+                Grid.Column="0" Grid.Row="4"
+                />
+
+            <fields:FieldSpinner
+                x:Name="ToStateSpinner"
+                Title="State"
+                Grid.Column="1" Grid.Row="4"
+                />
+
+            <fields:FieldEntry
+                x:Name="ToCity"
+                Title="City"
+                Grid.Column="0" Grid.Row="5"
+                />
+            
+            <fields:FieldEntry
+                x:Name="ToZipEntry"
+                Keyboard="Numeric"
+                Title="Zip"
+                Grid.Column="1" Grid.Row="5"
+                />
+
+            <Label
+                x:Name="ValuesLabel" Text="Values"
+                Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="2"
+                />
+
+            <fields:FieldEntry
+                x:Name="ShippingEntry"
+                Title="Shipping"
+                Keyboard="Numeric"
+                Grid.Column="0" Grid.Row="7"
+                />
+
+            <fields:FieldEntry
+                x:Name="AmountEntry"
+                Title="Amount"
+                Keyboard="Numeric"
+                Grid.Column="1" Grid.Row="7"
+                />
+
+            <Button
+                x:Name="ResetButton"
+                Text="RESET VALUES"
+                Grid.Column="0" Grid.Row="8"
+                />
+
+            <Button x:Name="TaxButton"
+                Text="CALCULATE TAX"
+                Grid.Column="1" Grid.Row="8"
+                />
+
+            <Label
+                x:Name="MessageLabel"
+                Grid.Column="0" Grid.Row="9" Grid.ColumnSpan="2"
+                HorizontalOptions="Center"
+                />
+        </Grid>
+    </ScrollView>
+</ContentPage>
