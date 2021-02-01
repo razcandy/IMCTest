@@ -3,9 +3,7 @@ using GalaSoft.MvvmLight.Command;
 using IMCTest.Data;
 using IMCTest.Services;
 using IMCTest.Values;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace IMCTest
 {
@@ -48,26 +46,9 @@ namespace IMCTest
             taxService = new TaxService();
             ResetCommand = new RelayCommand(Reset);
             SubmitCommand = new RelayCommand(Submit);
-
-            Test();
-        }
-
-        private void Test()
-		{
-            taxRequest.FromCountry = "US";
-            taxRequest.ToCountry = "US";
-            //Shipping = "5.99";
-            ToZip = "27609";
-            ToState = "NC";
-            //Amount = 3.14;
-
-            //taxRequest.FromCity = "Asheville";
-            taxRequest.FromState = "NC";
-            //taxRequest.FromZip = "28804";
         }
 
         // Properties ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
         public string Amount
         {
             get => amount;
