@@ -483,7 +483,7 @@ namespace IMCTest
         // Methods ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
         private (bool isValid, double value) EvaluateAsMonetary(string _value)
         {
-            if (string.IsNullOrWhiteSpace(_value)) return (false, 0);
+            if (string.IsNullOrWhiteSpace(_value)) return (true, 0);
 
             if (!double.TryParse(_value, out double valueDouble)) return (false, 0);
 
@@ -514,15 +514,12 @@ namespace IMCTest
         private void Reset()
 		{
             taxRequest = new TaxRequestModel();
-            amount = null;
-            //shipping = null;
+            Amount = null;
             Shipping = null;
 
-            RaisePropertyChanged(nameof(Amount));
             RaisePropertyChanged(nameof(FromCountry));
             RaisePropertyChanged(nameof(FromState));
             RaisePropertyChanged(nameof(FromZip));
-            //RaisePropertyChanged(nameof(Shipping));
             RaisePropertyChanged(nameof(ToCountry));
             RaisePropertyChanged(nameof(ToState));
             RaisePropertyChanged(nameof(ToZip));
